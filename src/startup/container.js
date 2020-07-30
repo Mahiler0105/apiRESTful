@@ -10,6 +10,7 @@ const {
   UserService,
   CommentService,
   IdeaService,
+  AuthService,
 } = require("../services");
 
 // CONTROLERS
@@ -18,6 +19,7 @@ const {
   UserController,
   CommentController,
   IdeaController,
+  AuthController,
 } = require("../controllers");
 
 //ROUTES
@@ -26,6 +28,7 @@ const {
   UserRoutes,
   IdeaRoutes,
   CommentRoutes,
+  AuthRoutes,
 } = require("../routes/index.routes");
 const Routes = require("../routes");
 
@@ -52,6 +55,7 @@ container
     UserService: asClass(UserService).singleton(),
     CommentService: asClass(CommentService).singleton(),
     IdeaService: asClass(IdeaService).singleton(),
+    AuthService: asClass(AuthService).singleton(),
   })
   .register({
     HomeController: asClass(HomeController.bind(HomeController)).singleton(),
@@ -60,12 +64,14 @@ container
       CommentController.bind(CommentController)
     ).singleton(),
     IdeaController: asClass(IdeaController.bind(IdeaController)).singleton(),
+    AuthController: asClass(AuthController.bind(AuthController)).singleton(),
   })
   .register({
     HomeRoutes: asFunction(HomeRoutes).singleton(),
     IdeaRoutes: asFunction(IdeaRoutes).singleton(),
     CommentRoutes: asFunction(CommentRoutes).singleton(),
     UserRoutes: asFunction(UserRoutes).singleton(),
+    AuthRoutes: asFunction(AuthRoutes).singleton(),
   })
   .register({
     User: asValue(User),
