@@ -1,4 +1,4 @@
-class BasRepository {
+class BaseRepository {
   constructor(model) {
     this.model = model;
   }
@@ -19,4 +19,4 @@ class BasRepository {
   }
 }
 
-module.exports = BasRepository;
+module.exports = BaseRepository;
