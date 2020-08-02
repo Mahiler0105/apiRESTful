@@ -17,6 +17,7 @@ class AuthService {
     }
     return await _userService.create(user);
   }
+
   async signIn(user) {
     const { username, password } = user;
     const userExist = await _userService.getUserByUsername(username);
